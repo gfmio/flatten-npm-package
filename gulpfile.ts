@@ -17,6 +17,7 @@ import gulpif from "gulp-if";
 import rename from "gulp-rename";
 import sourcemaps from "gulp-sourcemaps";
 import ts from "gulp-typescript";
+import prettier from "prettier";
 import vinyl from "vinyl";
 
 /** Configuration variables */
@@ -139,8 +140,14 @@ const packageJsonProcessorFactory = ({
   const fields = Object.keys(packageJsonContent).map((key) => processField(key, packageJsonContent[key]));
   // Generate the new package.json object representation
   const processedPackageJsonContent = Object.assign({}, ...fields);
+  // Create the prettier-formatted string representation
+  const outputContent = prettier.format(JSON.stringify(processedPackageJsonContent), {
+    parser: "json",
+    tabWidth: 2,
+    useTabs: false,
+  });
   // Write the new file to disk
-  fs.writeFileSync(outputPath, JSON.stringify(processedPackageJsonContent));
+  fs.writeFileSync(outputPath, outputContent);
   // Call the callback to signal task completion
   cb();
 };
@@ -169,6 +176,11 @@ const packageJson = task(
         case "description":
         case "author":
         case "license":
+        // Also include NPM metatdata fields like keywords, homepage, repository and bugs
+        case "keywords":
+        case "homepage":
+        case "repository":
+        case "bugs":
           return objectWithKeyAndValue(key, value);
         // Include private, if set to true
         case "private":
