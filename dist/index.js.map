@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":[],"mappings":";;;AAIA,iDAAuB;AACvB,kDAAwB","file":"index.js","sourcesContent":["/**\n * Sample package index module\n */\n\nexport * from \"./dir1\";\nexport * from \"./file1\";\n"]}

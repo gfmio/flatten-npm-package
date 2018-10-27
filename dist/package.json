@@ -1,0 +1,1 @@
+{"name":"flatten-npm-package","version":"1.0.0","description":"A sample package to explore how to publish flattened NPM packages","main":"index","module":"index.mjs","browser":"index.js","types":"index.d.ts","author":"Frederique Mittelstaedt <frederique@automorph.com>","license":"MIT","private":true}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["file1.ts"],"names":[],"mappings":"AAKA,qBAAa,EAAE;IACN,EAAE;CAIV","file":"file1.d.ts","sourcesContent":["/**\n * C1 class module\n */\n\n/** C1 class */\nexport class C1 {\n  public fn() {\n    // tslint:disable-next-line:no-console\n    console.log(\"Hello World\");\n  }\n}\n"]}

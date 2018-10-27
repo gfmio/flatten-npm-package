@@ -1,0 +1,1 @@
+{"version":3,"sources":["dir1/index.ts"],"names":[],"mappings":";;;AAIA,kDAAwB","file":"index.js","sourcesContent":["/**\n * dir1 index module\n */\n\nexport * from \"./file2\";\n"]}

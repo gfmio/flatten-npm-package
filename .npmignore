@@ -1,0 +1,14 @@
+node_modules
+src
+
+.editorconfig
+.gitignore
+.npmignore
+.prettierrc.toml
+
+gulpfile.ts
+tsconfig.cjs.json
+tsconfig.mjs.json
+tsconfig.settings.json
+tslint.json
+yarn.lock
